@@ -12,8 +12,22 @@ repositories {
 	mavenCentral()
 }
 
+configurations {
+	all {
+		resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+			if (details.requested.group == 'jakarta.annotation' && details.requested.name == 'jakarta.annotation-api') {
+				details.useVersion '2.0.0' // Micronaut required
+			}
+		}
+	}
+}
+
 dependencies {
+	annotationProcessor "io.micronaut:micronaut-inject-java:3.5.2"
+	annotationProcessor "io.micronaut:micronaut-validation:3.5.2"
+	annotationProcessor "io.micronaut.spring:micronaut-spring-annotation:4.2.1"
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation "io.micronaut.spring:micronaut-spring-context:4.2.1"
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
