@@ -1,5 +1,5 @@
 plugins {
-	id 'org.springframework.boot' version '2.6.9'
+	id 'org.springframework.boot' version '2.6.10'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
 }
@@ -23,11 +23,11 @@ configurations {
 }
 
 dependencies {
-	annotationProcessor "io.micronaut:micronaut-inject-java:3.5.2"
-	annotationProcessor "io.micronaut:micronaut-validation:3.5.2"
-	annotationProcessor "io.micronaut.spring:micronaut-spring-annotation:4.2.1"
+	annotationProcessor "io.micronaut:micronaut-inject-java:3.5.5"
+	annotationProcessor "io.micronaut:micronaut-validation:3.5.5"
+	annotationProcessor "io.micronaut.spring:micronaut-spring-annotation:4.2.2"
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation "io.micronaut.spring:micronaut-spring-context:4.2.1"
+	implementation "io.micronaut.spring:micronaut-spring-context:4.2.2"
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
